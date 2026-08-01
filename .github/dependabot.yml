@@ -1,0 +1,25 @@
+# Organisation-wide Dependabot defaults.
+#
+# Weekly rather than daily: a flood of PRs nobody reviews is functionally the
+# same as having it switched off, and worse for trust in the signal.
+# Security updates are separate and immediate — they are not batched here.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      # One PR for patch bumps. Reviewing forty individual patch PRs is how a
+      # team stops reviewing Dependabot PRs at all.
+      patch-updates:
+        update-types: [patch]
+    labels: [dependencies]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    labels: [dependencies, ci]
