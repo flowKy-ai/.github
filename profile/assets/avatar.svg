@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="FlowKy">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF8A4C"/>
+      <stop offset="100%" stop-color="#E0530A"/>
+    </linearGradient>
+    <linearGradient id="ear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A8390A"/>
+      <stop offset="100%" stop-color="#7E2A07"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full bleed. GitHub applies its own rounding, so a radius baked in here
+       would show as a dark ring once it is masked a second time. -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Floppy ears, drawn before the head so the head overlaps and they read as
+       attached. Upright ears on a round head read as a bear or a cat; hanging
+       ears are the shape that says dog at 32px, which is the size that matters.
+       Dark against both the cream head and the orange field, so the silhouette
+       survives when every internal detail has dissolved. -->
+  <g fill="url(#ear)">
+    <path d="M176 132C120 128 66 190 62 262c-4 68 22 110 60 110 36 0 54-36 50-90-4-58-2-110 18-140z"/>
+    <path d="M336 132c56-4 110 58 114 130 4 68-22 110-60 110-36 0-54-36-50-90 4-58 2-110-18-140z"/>
+  </g>
+
+  <circle cx="256" cy="252" r="146" fill="#FFF3E4"/>
+  <ellipse cx="256" cy="308" rx="84" ry="64" fill="#FFFFFF"/>
+
+  <circle cx="202" cy="236" r="24" fill="#2A1206"/>
+  <circle cx="310" cy="236" r="24" fill="#2A1206"/>
+  <circle cx="193.5" cy="227.5" r="8" fill="#FFFFFF"/>
+  <circle cx="301.5" cy="227.5" r="8" fill="#FFFFFF"/>
+
+  <ellipse cx="256" cy="292" rx="29" ry="22" fill="#2A1206"/>
+  <path d="M256 314v17" stroke="#2A1206" stroke-width="11" stroke-linecap="round"/>
+  <path d="M256 331c-15 18-42 12-47-6" stroke="#2A1206" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M256 331c15 18 42 12 47-6" stroke="#2A1206" stroke-width="11" stroke-linecap="round" fill="none"/>
+</svg>

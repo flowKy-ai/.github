@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/flowKy-ai/.github/main/profile/assets/banner.svg" alt="FlowKy — the sidekick for your coding agent" width="100%">
+<img src="https://raw.githubusercontent.com/flowKy-ai/.github/main/profile/assets/banner.png" alt="FlowKy — the sidekick for your coding agent" width="100%">
 
 <br><br>
 

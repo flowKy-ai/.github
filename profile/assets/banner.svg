@@ -34,32 +34,41 @@
 
   <circle cx="1010" cy="160" r="190" fill="url(#glow)"/>
 
-  <!-- Mascot -->
-  <g transform="translate(890,42) scale(0.98)">
-    <!-- Tail sits behind the body -->
-    <path d="M172 176c22-6 34-22 30-40-3-14-16-20-24-12-9 9-2 20 8 18"
-          fill="none" stroke="url(#furDark)" stroke-width="17" stroke-linecap="round"/>
-    <ellipse cx="120" cy="176" rx="60" ry="46" fill="url(#fur)"/>
-    <ellipse cx="120" cy="188" rx="34" ry="30" fill="url(#cream)"/>
-    <path d="M74 96C52 84 46 58 62 50c15-7 28 14 34 40z" fill="url(#furDark)"/>
-    <path d="M166 96C188 84 194 58 178 50c-15-7-28 14-34 40z" fill="url(#furDark)"/>
-    <circle cx="120" cy="106" r="58" fill="url(#fur)"/>
-    <ellipse cx="120" cy="128" rx="34" ry="26" fill="url(#cream)"/>
-    <ellipse cx="99" cy="99" rx="11" ry="12" fill="#FFFFFF"/>
-    <ellipse cx="141" cy="99" rx="11" ry="12" fill="#FFFFFF"/>
-    <circle cx="99" cy="99" r="6.4" fill="#2A1206"/>
-    <circle cx="141" cy="99" r="6.4" fill="#2A1206"/>
-    <circle cx="96.8" cy="96.4" r="2.1" fill="#FFFFFF"/>
-    <circle cx="138.8" cy="96.4" r="2.1" fill="#FFFFFF"/>
-    <path d="M88 84c6-4 14-4 20 0" stroke="#C4430A" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <path d="M132 84c6-4 14-4 20 0" stroke="#C4430A" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <ellipse cx="120" cy="118" rx="9.5" ry="7.4" fill="#2A1206"/>
-    <path d="M120 126v6" stroke="#2A1206" stroke-width="3.4" stroke-linecap="round"/>
-    <path d="M120 132c-6 7-16 5-18-2" stroke="#2A1206" stroke-width="3.4" stroke-linecap="round" fill="none"/>
-    <path d="M120 132c6 7 16 5 18-2" stroke="#2A1206" stroke-width="3.4" stroke-linecap="round" fill="none"/>
-    <path d="M84 152a40 26 0 0 0 72 0" fill="none" stroke="#2A1206" stroke-width="9" stroke-linecap="round"/>
-    <circle cx="120" cy="170" r="13" fill="#FFC978" stroke="#2A1206" stroke-width="3.5"/>
-    <path d="M114 170l4 4 8-8" fill="none" stroke="#2A1206" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Mascot. The head geometry is the avatar's, scaled — one animal across both
+       assets rather than two that merely share a palette. -->
+
+  <g transform="translate(0,-16)">
+
+  <!-- Tail, behind the body. A low sweep: the tight curl it replaced read as a
+       squirrel once the ears stopped being pointed. -->
+  <path d="M1100 262c34 2 54-14 58-40" fill="none" stroke="url(#furDark)"
+        stroke-width="18" stroke-linecap="round"/>
+
+  <ellipse cx="1030" cy="252" rx="76" ry="60" fill="url(#fur)"/>
+  <ellipse cx="1030" cy="266" rx="44" ry="40" fill="url(#cream)"/>
+
+  <g transform="translate(896.8,18.8) scale(0.5205)">
+    <g fill="url(#furDark)">
+      <path d="M176 132C120 128 66 190 62 262c-4 68 22 110 60 110 36 0 54-36 50-90-4-58-2-110 18-140z"/>
+      <path d="M336 132c56-4 110 58 114 130 4 68-22 110-60 110-36 0-54-36-50-90 4-58 2-110-18-140z"/>
+    </g>
+    <circle cx="256" cy="252" r="146" fill="url(#fur)"/>
+    <ellipse cx="256" cy="308" rx="84" ry="64" fill="url(#cream)"/>
+    <circle cx="202" cy="236" r="24" fill="#2A1206"/>
+    <circle cx="310" cy="236" r="24" fill="#2A1206"/>
+    <circle cx="193.5" cy="227.5" r="8" fill="#FFFFFF"/>
+    <circle cx="301.5" cy="227.5" r="8" fill="#FFFFFF"/>
+    <ellipse cx="256" cy="292" rx="29" ry="22" fill="#2A1206"/>
+    <path d="M256 314v17" stroke="#2A1206" stroke-width="11" stroke-linecap="round"/>
+    <path d="M256 331c-15 18-42 12-47-6" stroke="#2A1206" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <path d="M256 331c15 18 42 12 47-6" stroke="#2A1206" stroke-width="11" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Collar tag, the one detail the avatar drops: at 32px it would be mud. -->
+  <circle cx="1030" cy="242" r="15" fill="#FFC978" stroke="#2A1206" stroke-width="4"/>
+  <path d="M1023 242l5 5 9-9" fill="none" stroke="#2A1206" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
   </g>
 
   <!-- Wordmark. System font stack so it renders identically without a webfont,

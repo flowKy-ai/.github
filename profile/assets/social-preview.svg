@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="FlowKy — the sidekick for your coding agent">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0E06"/>
+      <stop offset="100%" stop-color="#2E1307"/>
+    </linearGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF8A4C"/>
+      <stop offset="100%" stop-color="#F0620F"/>
+    </linearGradient>
+    <linearGradient id="furDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C4430A"/>
+      <stop offset="100%" stop-color="#8E2F08"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF3E4"/>
+      <stop offset="100%" stop-color="#FFE2C2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF8A4C" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#FF8A4C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <g opacity="0.05" stroke="#FF8A4C" stroke-width="1">
+    <path d="M0 160h1280M0 320h1280M0 480h1280"/>
+    <path d="M160 0v640M320 0v640M480 0v640M640 0v640M800 0v640M960 0v640M1120 0v640"/>
+  </g>
+  <circle cx="640" cy="250" r="300" fill="url(#glow)"/>
+
+  <!-- Same animal as the avatar, same geometry, scaled. GitHub crops the
+       social card on some surfaces, so nothing load-bearing sits near an edge. -->
+  <g transform="translate(511.2,72) scale(0.503)">
+    <g fill="url(#furDark)">
+      <path d="M176 132C120 128 66 190 62 262c-4 68 22 110 60 110 36 0 54-36 50-90-4-58-2-110 18-140z"/>
+      <path d="M336 132c56-4 110 58 114 130 4 68-22 110-60 110-36 0-54-36-50-90 4-58 2-110-18-140z"/>
+    </g>
+    <circle cx="256" cy="252" r="146" fill="url(#fur)"/>
+    <ellipse cx="256" cy="308" rx="84" ry="64" fill="url(#cream)"/>
+    <circle cx="202" cy="236" r="24" fill="#2A1206"/>
+    <circle cx="310" cy="236" r="24" fill="#2A1206"/>
+    <circle cx="193.5" cy="227.5" r="8" fill="#FFFFFF"/>
+    <circle cx="301.5" cy="227.5" r="8" fill="#FFFFFF"/>
+    <ellipse cx="256" cy="292" rx="29" ry="22" fill="#2A1206"/>
+    <path d="M256 314v17" stroke="#2A1206" stroke-width="11" stroke-linecap="round"/>
+    <path d="M256 331c-15 18-42 12-47-6" stroke="#2A1206" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <path d="M256 331c15 18 42 12 47-6" stroke="#2A1206" stroke-width="11" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <g text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <text x="640" y="400" fill="#FFFFFF" font-size="112" font-weight="800" letter-spacing="-4">FlowKy</text>
+    <text x="640" y="460" fill="#FF9D5C" font-size="34" font-weight="600">The sidekick for your coding agent.</text>
+    <text x="640" y="524" fill="#FFFFFF" opacity="0.55" font-size="24">
+      Stops duplicate code · Breaks retry loops · Keeps the map honest
+    </text>
+    <text x="640" y="586" fill="#FFFFFF" opacity="0.32" font-size="21">
+      Claude Code · Cursor · Copilot · Gemini CLI · Windsurf · Cline
+    </text>
+  </g>
+</svg>
