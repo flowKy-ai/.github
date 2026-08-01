@@ -104,8 +104,24 @@ Everything in **[`flowky`](https://github.com/flowKy-ai/flowky)** is MIT.
 | **[API reference](https://github.com/flowKy-ai/flowky/tree/main/docs/api)** | Endpoints, auth, rate limits — and the client mistakes worth avoiding, including the one that silently downgrades a paying user to the free tier |
 | **[Website starter](https://github.com/flowKy-ai/flowky/tree/main/starter)** | Zero dependencies, one readable file. Scaffolds a site that ships with agent config already in place, because config written on day one is short and true, and config written on day ninety is archaeology |
 | **[Tips](https://github.com/flowKy-ai/flowky/blob/main/TIPS.md)** | Short and checkable. "Put your build command in CLAUDE.md" beats "maintain good documentation" |
+| **[FlowKy Bot](https://github.com/flowKy-ai/flowky/blob/main/.github/scripts/flowky-bot.mjs)** | Our dependency bot. It applies the updates, runs your build, and when something breaks it binary-searches for the culprit, drops it, and ships the rest. What lands is green by construction — see below |
 
 The extension and web application are closed source.
+
+### FlowKy Bot
+
+A dependency pull request that says "tests failing" has moved the work to you, not away from you. So ours does not open one until it knows what passes.
+
+```console
+2 outdated, 2 candidates, 1 with advisories.
+  verification failed on `test` with 2 updates — isolating
+  held back `ms` — breaks `test`
+
+→ Updated and verified:  semver 7.5.0 → 7.8.5  (fixes a high advisory)
+→ Held back:             ms     2.0.0 → 2.1.3  (breaks `test`)
+```
+
+Isolation is a binary search, so k culprits cost O(k log n) runs rather than testing every update on its own. Majors are held back, except when one carries a live advisory — an unpatched vulnerability is worse than a breaking change you were warned about. Zero dependencies, because a tool that audits your supply chain should not enlarge it. It is a reusable workflow: `uses: flowKy-ai/flowky/.github/workflows/flowky-bot.yml@main`.
 
 ---
 
@@ -113,9 +129,10 @@ The extension and web application are closed source.
 
 Stated because it is checkable, and because a policy nobody can verify is decoration.
 
-- **Every repository requires a review** before merging to the default branch, including the private ones. No force-pushes, no branch deletion, linear history.
+- **Every repository requires a review, resolved conversations and linear history** on its default branch, private ones included. No force-pushes, no branch deletion. Owners can bypass — with one member, requiring an approval nobody is allowed to give would deadlock the repository outright — and every bypass lands in the audit log. That is a real limit of a small org, and worth saying rather than implying a gate that is not there.
 - **`GITHUB_TOKEN` is read-only by default** in every repository, and workflows cannot approve their own pull requests. The historical default was write-all, which is the mechanism behind most Actions supply-chain incidents.
 - **Secret scanning with push protection** on public repositories — it blocks a credential before it enters history, where removing it means a rewrite and a rotation.
+- **Advisory alerts on, automated dependency pull requests off.** [FlowKy Bot](https://github.com/flowKy-ai/flowky/blob/main/.github/scripts/flowky-bot.mjs) opens those instead, and it opens them already tested. Two bots filing for the same advisory is how a security queue starts getting ignored.
 - **Superseded repositories are archived, not deleted.** They are read-only, so nobody mistakes one for live, and the history stays recoverable.
 - **No contact address is published that we have not verified.** A security policy routing reports into a void is worse than one that only offers the form that works.
 
