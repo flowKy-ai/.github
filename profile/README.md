@@ -14,7 +14,7 @@ We give it memory, guardrails, and a map that tells you when it has gone stale.
 
 [![Docs and API](https://img.shields.io/badge/docs%20%26%20API-read-F0620F?style=flat-square)](https://github.com/flowKy-ai/flowky/tree/main/docs/api)
 [![Starter](https://img.shields.io/badge/website%20starter-MIT-F0620F?style=flat-square)](https://github.com/flowKy-ai/flowky/tree/main/starter)
-[![Tips](https://img.shields.io/badge/tips-25%20guides-F0620F?style=flat-square)](https://github.com/flowKy-ai/flowky/blob/main/TIPS.md)
+[![Tips](https://img.shields.io/badge/tips-21%20tips-F0620F?style=flat-square)](https://github.com/flowKy-ai/flowky/blob/main/TIPS.md)
 [![Discussions](https://img.shields.io/badge/discussions-join-F0620F?style=flat-square)](https://github.com/flowKy-ai/flowky/discussions)
 
 </div>
@@ -34,7 +34,9 @@ FlowKy: this symbol already exists in this codebase.
 Import and reuse the existing definition, or extend it.
 ```
 
-It **asks**, it does not block. Overloads and re-exports are legitimate, and a hard block produces false positives that get the hook switched off within a week.
+It **asks once**, it never blocks. Overloads and re-exports are legitimate, and a hard block produces false positives that get the hook switched off within a week.
+
+*Status: the guard runs on our own codebase. It is not in the published extension yet; it ships with the next release.*
 
 ---
 
@@ -69,6 +71,8 @@ your-project/
     └── hooks/flowky-guard.mjs    # Node, so macOS, Linux and Windows alike
 ```
 
+Today the published extension writes `CLAUDE.md`, the rules and the project-map skill. The hook wiring in `settings.json` and the guard file arrive with the next release.
+
 Three decisions in that layout, each one deliberate:
 
 **The directory tree is not in `CLAUDE.md`.** Claude Code's own `/doctor` strips directory layouts from context files, because the model can derive them and a written-down tree goes stale on the next refactor. It lives in a skill, where it costs nothing until something opens it.
@@ -79,19 +83,27 @@ Three decisions in that layout, each one deliberate:
 
 ---
 
-## Works with what you already pay for
+## Works with what you already use
 
-Claude Code · Cursor · Copilot · Gemini CLI · Windsurf · Cline
+Built for Claude Code. The project map and the generated configuration also work with Cursor, Copilot and other agents that read files in your repository.
 
 We do not replace them. We sit underneath and stop them repeating themselves.
+
+**In the published VS Code extension today**
+
+|  |  |
+|---|---|
+| **Gives your agent a map** | Directory tree, symbols and import graph in a skill it opens on demand. Sessions that never open the map pay zero tokens for it. |
+| **Writes the configuration** | One command writes `CLAUDE.md`, path-scoped rules and the project-map skill from your real codebase. |
+| **Your keys, your machine** | OpenAI, Anthropic, Google, or anything OpenAI-compatible. Model calls go straight to your provider, not through us. |
+
+**Coming with the next release**
 
 |  |  |
 |---|---|
 | **Stops duplicate code** | Every function and class indexed. The agent gets the file and line before the write lands. |
 | **Breaks the retry loop** | Third identical failure, interrupted, shown the error it kept skipping past. |
 | **Keeps the map honest** | Records the commit it was built from and reports the drift. A stale map that reads as confident is worse than no map. |
-| **Costs nothing until used** | Sessions that never open the map pay zero tokens for it. |
-| **Your keys, your machine** | OpenAI, Anthropic, Google, or anything OpenAI-compatible. No inference request passes through us. |
 
 ---
 
@@ -155,3 +167,7 @@ FlowKy is bring-your-own-key: provider credentials stay in the user's editor. If
 <sub>Paris, France · <a href="https://github.com/flowKy-ai/.github/blob/main/.github/CODE_OF_CONDUCT.md">Code of conduct</a> · <a href="https://github.com/flowKy-ai/flowky/blob/main/CONTRIBUTING.md">Contributing</a></sub>
 
 </div>
+
+---
+
+<sub>FlowKy is an independent product. It is not affiliated with, endorsed or sponsored by Anthropic, or by the makers of the other tools named here. Claude and Claude Code are trademarks of Anthropic, PBC; all other names are trademarks of their respective owners.</sub>
